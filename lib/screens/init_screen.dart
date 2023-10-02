@@ -61,16 +61,7 @@ class _InitScreenState extends State<InitScreen> {
     try {
       await methods.init();
       await initConfigs();
-      if (!currentPassed()) {
-        Future.delayed(Duration.zero, () async {
-          await webDavSyncAuto(context);
-          Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (BuildContext context) {
-              return const CalculatorScreen();
-            }),
-          );
-        });
-      } else {
+       
         Future.delayed(Duration.zero, () async {
           await webDavSyncAuto(context);
           Navigator.of(context).pushReplacement(
@@ -79,7 +70,7 @@ class _InitScreenState extends State<InitScreen> {
             }),
           );
         });
-      }
+      
     } catch (e, st) {
       print("$e\n$st");
       defaultToast(context, "初始化失败, 请设置网络");
