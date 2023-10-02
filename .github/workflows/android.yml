@@ -13,15 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: upgrade flutter
-      uses: geowatson/flutter-latest@1.0.1
-      with:
-          args: upgrade
-
-    - name: upgrade flutter
-      uses: geowatson/flutter-latest@1.0.1
-      with:
-          args: pub get
+    
 
     - name: build apk
       uses: geowatson/flutter-latest@1.0.1
