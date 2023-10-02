@@ -1,4 +1,4 @@
-name: Android CI
+name: Flutter Build
 
 on:
   push:
@@ -14,6 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: setup flutter
+      uses: geowatson/flutter-latest@1.0.1
+      with:
+          args: upgrade
+
+    - name: upgrade flutter
       uses: geowatson/flutter-latest@1.0.1
       with:
           args: pub get
