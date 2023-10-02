@@ -24,6 +24,6 @@ jobs:
         args: build apk --release
     
     - name: upload artifact
-      uses: action/upload-artifact@v3
+      uses: actions/upload-artifact@v3
       with:
         path: build/app/outputs/flutter-apk/*.apk
